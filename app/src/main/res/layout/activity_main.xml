@@ -12,18 +12,24 @@
         android:layout_width="wrap_content"
         android:textSize="40sp"
         android:layout_height="wrap_content"
-        android:text="0"/>
+        android:text="@string/count_text"/>
 
     <Button
         android:id="@+id/count_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="inc"/>
+        android:text="@string/increment_btn_text"/>
+
+    <Button
+        android:id="@+id/rest_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rest_btn_text"/>
 
     <Button
         android:id="@+id/reset_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="reset"/>
+        android:text="@string/reset_btn_text"/>
 
 </LinearLayout>
