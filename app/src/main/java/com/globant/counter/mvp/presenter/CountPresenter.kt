@@ -5,6 +5,7 @@ import com.globant.counter.mvp.view.CountView
 import com.globant.counter.utils.bus.RxBus
 import com.globant.counter.utils.bus.observer.OnCountButtonPressedBusObserver
 import com.globant.counter.utils.bus.observer.OnResetButtonPressedBusObserver
+import com.globant.counter.utils.bus.observer.OnRestButtonPressedBusObserver
 
 class CountPresenter(model: CountModel, view: CountView) {
 
@@ -23,6 +24,13 @@ class CountPresenter(model: CountModel, view: CountView) {
             RxBus.subscribe(activity, object : OnResetButtonPressedBusObserver() {
                 override fun onEvent(value: OnResetButtonPressedBusObserver.OnResetButtonPressed) {
                     model.reset()
+                    view.setCount(model.count.toString())
+                }
+            })
+
+            RxBus.subscribe(activity, object : OnRestButtonPressedBusObserver() {
+                override fun onEvent(value: OnRestButtonPressedBusObserver.OnRestButtonPressed) {
+                    model.rest()
                     view.setCount(model.count.toString())
                 }
             })

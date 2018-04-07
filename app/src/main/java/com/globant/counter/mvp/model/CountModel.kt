@@ -13,4 +13,8 @@ class CountModel {
         count += 1
     }
 
+    fun rest() {
+        count -= 1
+    }
+
 }

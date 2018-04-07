@@ -5,6 +5,7 @@ import android.app.Activity
 import com.globant.counter.utils.bus.RxBus
 import com.globant.counter.utils.bus.observer.OnCountButtonPressedBusObserver
 import com.globant.counter.utils.bus.observer.OnResetButtonPressedBusObserver
+import com.globant.counter.utils.bus.observer.OnRestButtonPressedBusObserver
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -17,6 +18,10 @@ class CountView(activity: Activity) : ActivityView(activity) {
 
         activity.reset_button.setOnClickListener {
             RxBus.post(OnResetButtonPressedBusObserver.OnResetButtonPressed())
+        }
+
+        activity.rest_button.setOnClickListener {
+            RxBus.post(OnRestButtonPressedBusObserver.OnRestButtonPressed())
         }
     }
 
